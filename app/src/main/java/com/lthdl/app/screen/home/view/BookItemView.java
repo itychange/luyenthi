@@ -14,6 +14,7 @@ import com.bumptech.glide.Glide;
 import com.lthdl.app.R;
 import com.lthdl.app.common.widget.button.CButton;
 import com.lthdl.app.common.widget.textview.CTextView;
+import com.lthdl.app.model.BookId;
 import com.lthdl.app.model.IMyBooks;
 import com.lthdl.app.screen.bookdetail.event.OnEventOpenBookDetailActivity;
 
@@ -52,6 +53,8 @@ public class BookItemView extends LinearLayout {
     String rating;
     String cost;
     public ArrayList<IMyBooks> arrayList=null;
+    public ArrayList<BookId> arrayLisst=null;
+
     public BookItemView(Context paramContext) {
         super(paramContext);
         init();
@@ -59,6 +62,16 @@ public class BookItemView extends LinearLayout {
     public BookItemView(Context paramContext, ArrayList<IMyBooks>arrayList, String url, String title, String author, String rating, String cost) {
         super(paramContext);
         this.arrayList=arrayList;
+        this.url=url;
+        this.title=title;
+        this.author=author;
+        this.rating=rating;
+        this.cost=cost;
+        init();
+    }
+    public BookItemView(Context paramContext, ArrayList<BookId>arrayList, String url, String title, String author, String rating, String cost,String e) {
+        super(paramContext);
+        this.arrayLisst=arrayList;
         this.url=url;
         this.title=title;
         this.author=author;
@@ -84,8 +97,6 @@ public class BookItemView extends LinearLayout {
         tvCost= (CTextView) view.findViewById(R.id.tvCost);
         rbRating= (RatingBar) view.findViewById(R.id.rbRating);
         numrating= (CTextView) view.findViewById(R.id.numrating);
-        Log.i("null","===>"+rating);
-
         if(arrayList!=null){
             Glide.with(getContext())
                     .load(url)

@@ -48,11 +48,8 @@ public class MyBooks extends Activity {
         call.enqueue(new Callback<ItemBook>() {
             @Override
             public void onResponse(Call<ItemBook> call, Response<ItemBook> response) {
-                ItemBook itemBook=response.body();
-                Log.i("null","=====>"+itemBook.getMyBookses().size());
+            /*    ItemBook itemBook=response.body();
                 for(int i=0;i<itemBook.getMyBookses().size();i++){
-                    Log.i("null","=====>"+itemBook.getMyBookses().get(i).getName());
-
                     IMyBooks modeMyBooks=new IMyBooks();
                     modeMyBooks.setName(itemBook.getMyBookses().get(i).getName());
                     modeMyBooks.setAuthor(itemBook.getMyBookses().get(i).getAuthor());
@@ -70,7 +67,7 @@ public class MyBooks extends Activity {
                     myBookses.add(modeMyBooks);
                 }
                 adapter = new BookListAdapter(myBookses);
-                rvMyBooks.setAdapter(adapter);
+                rvMyBooks.setAdapter(adapter);*/
 
             }
 

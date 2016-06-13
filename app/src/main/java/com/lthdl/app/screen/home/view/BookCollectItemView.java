@@ -11,6 +11,13 @@ import android.widget.TextView;
 
 import com.github.aakira.expandablelayout.ExpandableRelativeLayout;
 import com.lthdl.app.R;
+import com.lthdl.app.model.BookId;
+import com.lthdl.app.model.IMyBooks;
+import com.lthdl.app.model.ItemBook;
+import com.lthdl.app.model.ItemBookId;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -38,9 +45,11 @@ public class BookCollectItemView extends FrameLayout {
     TextView text1;
 
     String title;
-    public BookCollectItemView(Context paramContext,String title) {
+    BookId mItemBookId;
+    public BookCollectItemView(Context paramContext,String title,BookId mItemBookId) {
         super(paramContext);
         this.title=title;
+        this.mItemBookId=mItemBookId;
         init();
     }
 
@@ -75,10 +84,12 @@ public class BookCollectItemView extends FrameLayout {
         }
         this.imvExpandChapter.setImageResource(R.drawable.icon_arrow_up);
     }
-
+//    String url, String title, String author, String rating, String cost
     public void setData() {
-        for (int i = 0; i < 10; i++) {
-            BookItemView localBookItemView = new BookItemView(getContext());
+        ArrayList<IMyBooks> arr=mItemBookId.getMyBookses();
+        for (int i = 0; i < mItemBookId.getMyBookses().size(); i++) {
+            BookItemView localBookItemView = new BookItemView(getContext(),arr,mItemBookId.getMyBookses().get(i).getConver(),mItemBookId.getMyBookses().get(i).getName()
+            ,mItemBookId.getMyBookses().get(i).getAuthor(),mItemBookId.getMyBookses().get(i).getRate(),mItemBookId.getMyBookses().get(i).getRole());
             //if (i < MAX_BOOK_VISIBLE) {
                 this.lyBookGroupVisiable.addView(localBookItemView);
             /*} else {

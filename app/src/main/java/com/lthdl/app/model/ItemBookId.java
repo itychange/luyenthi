@@ -7,18 +7,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by THANHHUNGPHAT on 12/06/2016.
+ * Created by Windows on 6/13/2016.
  */
-public class ItemBookTrangChu {
+public class ItemBookId {
     @SerializedName("items")
     @Expose
-    private List<ItemBook> myBookses = new ArrayList<ItemBook>();
-    public List<ItemBook> getMyBookses() {
+    private List<IMyBooks> myBookses = new ArrayList<IMyBooks>();
+
+    public List<IMyBooks> getMyBookses() {
         return myBookses;
     }
 
-    public void setMyBookses(List<ItemBook> myBookses) {
+    public void setMyBookses(List<IMyBooks> myBookses) {
         this.myBookses = myBookses;
     }
-
 }
