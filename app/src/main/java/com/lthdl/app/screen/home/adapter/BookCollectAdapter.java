@@ -17,7 +17,7 @@ public class BookCollectAdapter extends Adapter<BookCollectViewHolder> {
     String title;
     int pos=0;
     public BookCollectAdapter(){
- 
+
     }
     public BookCollectAdapter(ItemBookTrangChu itemBookTrangChu){
         this.itemBookTrangChu = itemBookTrangChu;
