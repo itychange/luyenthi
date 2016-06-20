@@ -32,7 +32,6 @@ public class BookCollectAdapter extends Adapter<BookCollectViewHolder> {
     }
 
     public BookCollectViewHolder onCreateViewHolder(ViewGroup paramViewGroup, int paramInt) {
-        Log.d("hshhshsh===>","Dtatatattata:"+itemBookTrangChu.getMyBookses().get(pos).getBookId());
         return new BookCollectViewHolder(new BookCollectItemView(paramViewGroup.getContext(),itemBookTrangChu.getMyBookses().get(pos).getName(),itemBookTrangChu.getMyBookses().get(pos).getBookId()));
     }
 }

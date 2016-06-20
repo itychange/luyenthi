@@ -47,13 +47,6 @@ public class HomeListHasGroupFragment extends BaseFragment {
             @Override
             public void onResponse(Call<BooksTrangChu> call, Response<BooksTrangChu> response) {
 
-                Log.i("==>","data"+response.body().getItemBooks().getMyBookses().size());
-                for(int i=0;i<response.body().getItemBooks().getMyBookses().size();i++){
-                    Log.i("==>","data"+response.body().getItemBooks().getMyBookses().get(i).getName());
-                }
-
-
-
                 itemBookTrangChu =response.body().getItemBooks();
                 if(itemBookTrangChu !=null){
                     adapter = new BookCollectAdapter(itemBookTrangChu);
