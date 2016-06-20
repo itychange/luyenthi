@@ -1,11 +1,8 @@
 package com.lthdl.app.screen.home.adapter;
 
 import android.support.v7.widget.RecyclerView.Adapter;
-import android.util.Log;
 import android.view.ViewGroup;
 
-import com.lthdl.app.model.BookId;
-import com.lthdl.app.model.ItemBook;
 import com.lthdl.app.model.ItemBookId;
 import com.lthdl.app.model.ItemBookTrangChu;
 import com.lthdl.app.screen.home.holder.BookCollectViewHolder;
